@@ -31,7 +31,15 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    Form
+                </div>
+                <div class="card-body">
+                        <form [formGroup]="movementForm"  (ngSubmit)="onSubmit(movementForm.value)">
+                        <div class="form-group">
+                            <label for=""></label>
+                            <input type="date" class="form-control" id="date" placeholder="Enter date dd/mm/yyyy">
+                        </div>
+                        <button class="button" type="submit">Save</button>
+                    </form>
                 </div>
             </div>
         </div>
