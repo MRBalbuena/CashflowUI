@@ -1,18 +1,39 @@
-<p>movements works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
 
-<!-- Bootstrap DatePicker -->
-<p>Simple datepicker</p>
+                    <!-- Bootstrap DatePicker -->
+                    <p>Simple datepicker</p>
+                </div>
+                <div class="card-body">
+                    <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
 
-<ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+                    <hr />
 
-<hr/>
+                    <button class="btn btn-sm btn-outline-primary mr-2" (click)="selectToday()">Select Today</button>
+                    <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo()">To current
+                        month</button>
+                    <button class="btn btn-sm btn-outline-primary mr-2"
+                        (click)="dp.navigateTo({year: 2013, month: 2})">To
+                        Feb
+                        2013</button>
 
-<button class="btn btn-sm btn-outline-primary mr-2" (click)="selectToday()">Select Today</button>
-<button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo()">To current month</button>
-<button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo({year: 2013, month: 2})">To Feb 2013</button>
-
-<hr/>
-
-<pre>Month: {{ date.month }}.{{ date.year }}</pre>
-<pre>Model: {{ model | json }}</pre>
-
+                    <hr />
+                    <!--
+                <pre>Month: {{ date.month }}.{{ date.year }}</pre>
+                <pre>Model: {{ model | json }}</pre>
+                -->
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Form
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
