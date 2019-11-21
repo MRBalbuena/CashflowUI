@@ -22,7 +22,12 @@ export class MovementsComponent implements OnInit {
 
   createForm() {
     this.movementForm = this.formBuilder.group({
-      date: ''
+      date: '',
+      user:'',
+      bank:'',
+      amount: '',
+      group: '',
+      description: ''
     });
   }
 

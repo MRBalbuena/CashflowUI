@@ -3,43 +3,67 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-
-                    <!-- Bootstrap DatePicker -->
-                    <p>Simple datepicker</p>
+                    Movements
                 </div>
                 <div class="card-body">
-                    <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
-
-                    <hr />
-
-                    <button class="btn btn-sm btn-outline-primary mr-2" (click)="selectToday()">Select Today</button>
-                    <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo()">To current
-                        month</button>
-                    <button class="btn btn-sm btn-outline-primary mr-2"
-                        (click)="dp.navigateTo({year: 2013, month: 2})">To
-                        Feb
-                        2013</button>
-
-                    <hr />
-                    <!--
-                <pre>Month: {{ date.month }}.{{ date.year }}</pre>
-                <pre>Model: {{ model | json }}</pre>
-                -->
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                </div>
-                <div class="card-body">
-                        <form [formGroup]="movementForm"  (ngSubmit)="onSubmit(movementForm.value)">
+                    {{diagnostic}}
+                    <form [formGroup]="movementForm" (ngSubmit)="onSubmit(movementForm.value)">
                         <div class="form-group">
-                            <label for=""></label>
-                            <input type="date" class="form-control" id="date" placeholder="Enter date dd/mm/yyyy">
+                            <label for="movement-date">Date</label>
+                            <div class="input-group">
+                                <input class="form-control" placeholder="dd-mm-yyyy" name="date" id="movement-date"
+                                    ngbDatepicker #d="ngbDatepicker" formControlName="date">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary calendar" (click)="d.toggle()"
+                                        type="button"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="select-user">User</label>
+                            <select class="custom-select" id="select-user" name="user" formControlName="date">
+                                <option selected>Choose...</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="select-bank">Bank</label>
+                            <select class="custom-select" id="select-bank" name="bank" formControlName="bank">
+                                <option selected>Choose...</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-amount">Amount</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="initGroup-pound" aria-label="pounds">£</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="pounds"
+                                    aria-describedby="initGroup-pound" name="amount" id="form-amount" formControlName="amount">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-group">Group</label>
+                            <select class="custom-select" id="form-group" name="group" formControlName="group">
+                                <option selected>Choose...</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-description">Description</label>
+                            <textarea class="form-control" name="description" id="form-description" formControlName="description"></textarea>
                         </div>
                         <button class="button" type="submit">Save</button>
                     </form>
+                    {{diagnostic}}
                 </div>
             </div>
         </div>

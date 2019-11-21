@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MovementsComponent } from './movements/movements.component';
+import { NgbDateCustomParserFormatter } from './common/NgbDateCustomParserFormatter';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { MovementsComponent } from './movements/movements.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{provide: NgbDateParserFormatter, useClass: NgbDateCustomParserFormatter}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
