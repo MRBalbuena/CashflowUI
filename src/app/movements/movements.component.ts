@@ -12,12 +12,18 @@ export class MovementsComponent implements OnInit {
   model: NgbDateStruct;
   date: { year: number, month: number };
   movementForm: any;
+  users: string[];
+  banks: string[];
+  groups: string[];
 
   constructor(private calendar: NgbCalendar, private formBuilder: FormBuilder) {
     this.createForm();
   }
 
   ngOnInit() {
+    this.users = ['Marcelo', 'Gaby'];
+    this.banks = ['Barclays'];
+    this.groups = ['Super', 'Petrol', 'Rent House'];
   }
 
   createForm() {

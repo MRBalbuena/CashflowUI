@@ -23,9 +23,7 @@
                             <label for="select-user">User</label>
                             <select class="custom-select" id="select-user" name="user" formControlName="date">
                                 <option selected>Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option *ngFor="let user of users">{{user}}</option>
                             </select>
                         </div>
 
@@ -33,9 +31,7 @@
                             <label for="select-bank">Bank</label>
                             <select class="custom-select" id="select-bank" name="bank" formControlName="bank">
                                 <option selected>Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option *ngFor="let bank of banks">{{bank}}</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -52,9 +48,7 @@
                             <label for="form-group">Group</label>
                             <select class="custom-select" id="form-group" name="group" formControlName="group">
                                 <option selected>Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option *ngFor="let group of groups">{{group}}</option>
                             </select>
                         </div>
                         <div class="form-group">
