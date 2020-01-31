@@ -3,11 +3,11 @@ import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-movements',
-  templateUrl: './movements.component.html',
-  styleUrls: ['./movements.component.scss']
+  selector: 'app-movement',
+  templateUrl: './movement.component.html',
+  styleUrls: ['./movement.component.scss']
 })
-export class MovementsComponent implements OnInit {
+export class MovementComponent implements OnInit {
 
   model: NgbDateStruct;
   date: { year: number, month: number };

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MovementsComponent } from './movements/movements.component';
+import { MovementComponent } from './movements/movement-container/movement/movement.component';
 
 
 const routes: Routes = [
-  { path: 'movements', component: MovementsComponent },
+  { path: 'movements', component: MovementComponent },
 ];
 
 @NgModule({

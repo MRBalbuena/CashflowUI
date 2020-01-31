@@ -5,13 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MovementsComponent } from './movements/movements.component';
+import { MovementComponent } from './movements/movement-container/movement/movement.component';
 import { NgbDateCustomParserFormatter } from './common/NgbDateCustomParserFormatter';
+import { MovementContainerComponent } from './movements/movement-container/movement-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MovementsComponent
+    MovementComponent,
+    MovementContainerComponent
   ],
   imports: [
     BrowserModule,
